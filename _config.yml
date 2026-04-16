@@ -1,0 +1,24 @@
+title: "Amar's Notebook"
+description: "Notes on Machine Learning, Mathematics & Deep Learning"
+author: "Amar"
+url: "https://amar-new.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+  input: GFM
+
+# Permalink structure — clean URLs
+permalink: /blog/:year/:month/:day/:title/
+
+# Plugins (supported by GitHub Pages)
+plugins:
+  - jekyll-seo-tag
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

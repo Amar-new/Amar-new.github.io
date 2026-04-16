@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+
+  <!-- MathJax for math rendering -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+<body>
+
+  {% include header.html %}
+
+  <main class="site-main">
+    <div class="container animate-in">
+
+      <a href="{{ '/' | relative_url }}" class="back-link">← All posts</a>
+
+      <article>
+        <div class="article-header">
+          {% if page.category %}
+          <span class="article-category cat-{{ page.category }}">{{ page.category-label | default: page.category }}</span>
+          {% endif %}
+          <h1 class="article-title">{{ page.title }}</h1>
+          <div class="article-date">{{ page.date | date: "%B %-d, %Y" }}</div>
+        </div>
+
+        <div class="article-body">
+          {{ content }}
+        </div>
+
+        <hr>
+        <div class="article-footer">
+          <a href="{{ '/' | relative_url }}" class="back-link">← All posts</a>
+          <span class="author-name">{{ site.author }}</span>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  {% include footer.html %}
+
+</body>
+</html>

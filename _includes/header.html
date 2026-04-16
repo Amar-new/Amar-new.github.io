@@ -1,0 +1,10 @@
+<header class="site-header">
+  <div class="container">
+    <h1 class="site-name"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+    <p class="site-tagline">{{ site.description }}</p>
+    <nav class="site-nav">
+      <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Posts</a>
+      <a href="{{ '/about' | relative_url }}" {% if page.url == '/about/' or page.url == '/about' %}class="active"{% endif %}>About</a>
+    </nav>
+  </div>
+</header>
